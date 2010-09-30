@@ -1,6 +1,7 @@
+var encoder
 module.exports = {
-	encoder: require("encoder"),
-	htmllegacy: require("./encoder.js")(require("./htmllegacy.js")),
-	html: require("./encoder.js")(require("./htmllegacy.js")),
-	xml: require("./encoder.js")(require("./xml.js"))
+	encoder: encoder = require("./lib/encoder.js"),
+	htmllegacy: encoder(require("./lib/htmllegacy.js")),
+	html: encoder(require("./lib/htmllegacy.js")),
+	xml: encoder(require("./lib/xml.js"))
 }
